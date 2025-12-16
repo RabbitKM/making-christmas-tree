@@ -1,38 +1,41 @@
 # Copilot Instructions for MakingChristmasTree
 
-This project is a Python-based mini-game for customizing a Christmas tree, inspired by birthday cake decoration games.
+This project is a web-based mini-game for customizing a Christmas tree, inspired by birthday cake decoration games.
 
 ## Project Overview
-- **Purpose**: Allow users to create a personalized Christmas tree by selecting shape, color, and decorations, then display it in the console.
-- **Scope**: Single-file script (`main.py`) with interactive input and ASCII art output.
-- **Language**: Python 3.x.
+- **Purpose**: Allow users to create a personalized Christmas tree by selecting shape, color, and decorations, then display it in the browser.
+- **Scope**: Static web application with HTML, CSS, and JavaScript.
+- **Language**: JavaScript (ES6+), HTML5, CSS3.
 
 ## Architecture
-- Main entry point: `main.py`.
-- Key functions: `draw_tree()` for rendering the tree, `main()` for user interaction.
-- No complex components; uses loops for tree drawing and random for decorations.
+- Main entry point: `index.html`.
+- Key files: `script.js` for logic, `styles.css` for styling.
+- No server-side components; client-side only for GitHub Pages deployment.
 
 ## Key Patterns
-- User input via `input()` for customization options (height, shape, color, decorations).
-- ASCII art drawing with centered strings and ANSI color codes for visual appeal.
-- Random placement of decorations (lights, ornaments) using `random` module.
+- DOM manipulation for user input and output display.
+- String concatenation for ASCII art tree generation.
+- Event listeners for button clicks.
+- Random placement of decorations using `Math.random()`.
 - Shape variations: 'triangle', 'star', 'pine' with different loop structures.
-- Color mapping: Dictionary for ANSI escape codes (green, blue, red).
+- Color styling: Inline CSS for tree colors.
 
 ## Workflows
-- **Run**: `python main.py` in terminal.
-- **Test**: Run script and provide inputs; visually inspect output for correctness.
-- **Debug**: Add print statements in loops to check iteration values or decoration placement.
+- **Run**: Open `index.html` in a web browser or use a local server.
+- **Test**: Interact with UI elements; visually inspect tree output.
+- **Debug**: Use browser dev tools; console.log for variable checks.
+- **Deploy**: Push to GitHub and enable Pages for hosting.
 
 ## Conventions
-- Follow PEP 8 for code style.
-- Use `if __name__ == "__main__":` for script execution.
-- Handle invalid inputs with loops and try-except for integers.
+- Use semantic HTML5 elements.
+- Follow CSS BEM or similar naming conventions.
+- Use `const` and `let` for variables; avoid `var`.
+- Handle user input validation in JavaScript.
 
 ## Dependencies
-- Standard library only (`random` for decorations).
+- No external libraries; vanilla JavaScript only.
 
 ## Examples
-- Tree drawing: For 'triangle', loop `for i in range(1, height + 1): print(' ' * (height - i) + '*' * (2 * i - 1))`
-- Decorations: Randomly insert colored dots or 'O' in tree lines.
-- Trunk: Print centered '|' characters below the tree.
+- Tree drawing: For 'triangle', loop `for (let i = 1; i <= height; i++) { ... }`
+- Decorations: Randomly insert HTML spans with colors in tree strings.
+- Trunk: Append brown-colored '|' characters below the tree.
